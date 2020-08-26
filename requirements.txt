@@ -1,4 +1,4 @@
-pytorch==1.1.0 
+torch==1.1.0 
 torchvision==0.3.0
 gdown
 #Python = 3.6.8 in Anaconda3 = 4.7.5
