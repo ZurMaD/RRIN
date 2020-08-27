@@ -12,7 +12,7 @@ from os import listdir
 from os.path import isfile, join
 from datetime import datetime
 #from PIL import Image
-from skimage.io import imread
+#from skimage.io import imread
 
 torch.backends.cudnn.benchmark = True
 torch.backends.cudnn.fastest = True
