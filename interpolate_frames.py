@@ -41,7 +41,7 @@ def main():
     use_cuda = not args.no_cuda and torch.cuda.is_available()
     path = args.testpath
     sub_folder = args.subfolder
-    multiplier = args.multiplier
+    multiplier = int(float(str(args.multiplier)))
     transform = transforms.ToTensor()
 
     model = Net()
