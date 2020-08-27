@@ -29,7 +29,9 @@ Experiments on public datasets demonstrate the effectiveness and superiority of 
 
 ### Requirements and Dependencies
 
-- `requirements.txt`
+```
+$ pip install -r requirements.txt
+```
 
 ### Colab version
 
