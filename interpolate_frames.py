@@ -2,7 +2,7 @@ import argparse
 import torch
 import torchvision
 from torchvision import transforms
-from PIL import Image
+#from PIL import Image
 from model import Net
 import numpy as np
 
@@ -11,8 +11,9 @@ import os
 from os import listdir
 from os.path import isfile, join
 from datetime import datetime
-#from PIL import Image
 #from skimage.io import imread
+from PIL import Image  
+import PIL
 
 torch.backends.cudnn.benchmark = True
 torch.backends.cudnn.fastest = True
