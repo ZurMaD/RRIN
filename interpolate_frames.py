@@ -22,12 +22,18 @@ def list_path(p_dir):
     list_files = sorted(list_files, key=lambda x: int(os.path.splitext(x)[0]))
     return list_files
 
-def main(): 
-    parser = argparse.ArgumentParser(description='PyTorch Video Frame Interpolation via Residue Refinement')
-    parser.add_argument('--no-cuda', action='store_true', default=False, help='disables CUDA training')
-    parser.add_argument('--testpath', default='', help='Path to your test folder')
-    parser.add_argument('--subfolder', default='',help='Path to the folder inside your test path. For example: "input","input_x2","input_x4" ')
-    parser.add_argument('--multiplier', default=2, help='How many times you want to interpolate frames?. Use integer more than zero! and less than 6.')
+
+def main():
+    parser = argparse.ArgumentParser(
+        description='PyTorch Video Frame Interpolation via Residue Refinement')
+    parser.add_argument('--no-cuda', action='store_true',
+                        default=False, help='disables CUDA training')
+    parser.add_argument('--testpath', default='',
+                        help='Path to your test folder')
+    parser.add_argument('--subfolder', default='',
+                        help='Path to the folder inside your test path. For example: "input","input_x2","input_x4" ')
+    parser.add_argument('--multiplier', default=2,
+                        help='How many times you want to interpolate frames?. Use integer more than zero! and less than 6.')
 
     args = parser.parse_args()
     use_cuda = not args.no_cuda and torch.cuda.is_available()
@@ -65,7 +71,6 @@ def main():
                 os.mkdir(sub_folder)
             print(datetime.now(), 'Creating folder named: {}'.format(sub_folder))
 
-
     # MULTIPLIER
     for a in range(multiplier):
 
@@ -85,8 +90,8 @@ def main():
         # INFERENCE
         for b in range(len(onlyfiles)-1):
 
-            img1=Image.open(path+temp_sub_folder+'/'+onlyfiles[b])
-            img2=Image.open(path+temp_sub_folder+'/'+onlyfiles[b+1])
+            img1 = Image.open(path+temp_sub_folder+'/'+onlyfiles[b])
+            img2 = Image.open(path+temp_sub_folder+'/'+onlyfiles[b+1])
 
             ######################
             #    DO THE MODEL    #
@@ -108,14 +113,15 @@ def main():
                 pader = torch.nn.ReplicationPad2d([0, W_-W, 0, H_-H])
                 i1, i2 = pader(i1), pader(i2)
 
-
                 # 1.png -> 10.png
-                new_img1 = path+temp_sub_folder_dest+'/' + onlyfiles[b][:-4]+'0'+onlyfiles[b][-4:]
+                new_img1 = path+temp_sub_folder_dest+'/' + \
+                    onlyfiles[b][:-4]+'0'+onlyfiles[b][-4:]
                 # 1.png + 2.png -> 11.png
-                new_img3 = path+temp_sub_folder_dest+'/' + onlyfiles[b][:-4]+'1'+onlyfiles[b][-4:]
+                new_img3 = path+temp_sub_folder_dest+'/' + \
+                    onlyfiles[b][:-4]+'1'+onlyfiles[b][-4:]
                 # 2.png -> 20.png
-                new_img2 = path+temp_sub_folder_dest+'/' + onlyfiles[b+1][:-4]+'0'+onlyfiles[b+1][-4:]
-
+                new_img2 = path+temp_sub_folder_dest+'/' + \
+                    onlyfiles[b+1][:-4]+'0'+onlyfiles[b+1][-4:]
 
                 output = model(i1, i2)
                 output = output[0, :, 0:H, 0:W].squeeze(0).cpu()
