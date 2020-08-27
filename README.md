@@ -1,5 +1,6 @@
-# Video Frame Interpolation via Residue Refinement (RRIN)
- [Paper](https://ieeexplore.ieee.org/document/9053987/)
+# Video Frame Interpolation via Residue Refinement (RRIN) + Colab + Docker
+
+[Paper](https://ieeexplore.ieee.org/document/9053987/)
 
 Haopeng Li, Yuan Yuan, [Qi Wang](http://crabwq.github.io/#top)
 
