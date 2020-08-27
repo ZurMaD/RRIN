@@ -91,8 +91,8 @@ def main():
         # INFERENCE
         for b in range(len(onlyfiles)-1):
 
-            img1 = Image.open(path+temp_sub_folder+'/'+onlyfiles[b])
-            img2 = Image.open(path+temp_sub_folder+'/'+onlyfiles[b+1])
+            img1 = path+temp_sub_folder+'/'+onlyfiles[b]
+            img2 = path+temp_sub_folder+'/'+onlyfiles[b+1]
 
             ######################
             #    DO THE MODEL    #
@@ -100,8 +100,8 @@ def main():
 
             with torch.no_grad():
 
-                i1 = imread(img1)
-                i2 = imread(img2)
+                i1 = Image.open(img1)
+                i2 = Image.open(img2)
                 i1 = transform(i1).unsqueeze(0).cuda()
                 i2 = transform(i2).unsqueeze(0).cuda()
 
