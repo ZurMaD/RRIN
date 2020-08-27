@@ -1,6 +1,4 @@
 torch==1.4.0 
 torchvision==0.5.0
-gdown
-#Python = 3.6.8 in Anaconda3 = 4.7.5
-#CUDA = 9.2 & cuDNN = 7.0
-#PyTorch = 1.0
+Pillow==7.2.0
+gdown==3.12.2
