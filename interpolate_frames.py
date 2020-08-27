@@ -101,10 +101,10 @@ def main():
 
             with torch.no_grad():
 
-                i1 = Image.open(img1)
-                i2 = Image.open(img2)
-                i1 = transform(i1).unsqueeze(0).cuda()
-                i2 = transform(i2).unsqueeze(0).cuda()
+                i_1 = Image.open(img1)
+                i_2 = Image.open(img2)
+                i1 = transform(i_1).unsqueeze(0).cuda()
+                i2 = transform(i_2).unsqueeze(0).cuda()
 
                 if i1.size(1) == 1:
                     i1 = i1.expand(-1, 3, -1, -1)
@@ -128,9 +128,9 @@ def main():
                 output = model(i1, i2)
                 output = output[0, :, 0:H, 0:W].squeeze(0).cpu()
                 output = transforms.functional.to_pil_image(output)
-                i1.save(new_img1)
+                i_1.save(new_img1)
                 output.save(new_img3)
-                i1.save(new_img2)
+                i_2.save(new_img2)
 
                 print(datetime.now(), new_img3)
 
