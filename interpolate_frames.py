@@ -54,7 +54,7 @@ def main():
     print('---------- MAIN ----------', '\n',
           'Start Time:', datetime.now(), '\n',
           'Frames Founded:', len(list_path(path+sub_folder)), '\n',
-          'Final frames:', len(list_path(path+sub_folder))*multiplier, '\n',
+          'Final frames:', len(list_path(path+sub_folder))*2**multiplier, '\n',
           # 'Remain time estimated:',len(list_path(path))*multiplier*0.15,'\n
           '--------------------------')
 
