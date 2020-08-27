@@ -30,10 +30,16 @@ Experiments on public datasets demonstrate the effectiveness and superiority of 
 
 - `requirements.txt`
 
+### Colab version
+
+- [Notebook](https://colab.research.google.com/drive/1cdZiHmo76BOx4ID3_D4JiRbJR9_h2jlC?usp=sharing)
+
 ### Installation
 Download the repository:
 
-    $ git clone https://github.com/ZurMaD/RRIN.git
+```
+$ git clone https://github.com/ZurMaD/RRIN.git
+```
 
 ### Pre-trained Model
 
