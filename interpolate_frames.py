@@ -11,7 +11,8 @@ import os
 from os import listdir
 from os.path import isfile, join
 from datetime import datetime
-from PIL import Image
+#from PIL import Image
+from skimage.io import imread
 
 torch.backends.cudnn.benchmark = True
 torch.backends.cudnn.fastest = True
@@ -99,8 +100,8 @@ def main():
 
             with torch.no_grad():
 
-                i1 = Image.open(img1)
-                i2 = Image.open(img2)
+                i1 = imread(img1)
+                i2 = imread(img2)
                 i1 = transform(i1).unsqueeze(0).cuda()
                 i2 = transform(i2).unsqueeze(0).cuda()
 
