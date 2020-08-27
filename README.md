@@ -51,6 +51,7 @@ We provide the pre-trained model of "RRIN" at [OneDrive](https://1drv.ms/u/s!AsF
 Test the model using frames in `/RRIN/data`:
 
 ```
+# Interpolate one frame 10/22*total_frames
 $ python3 interpolate_frames.py --testpath '/content/RRIN/data/' --subfolder 'input' --multiplier 2
 ```
 
