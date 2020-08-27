@@ -26,57 +26,43 @@ All sub-modules in our method are implemented by U-Net with various depths.
 
 Experiments on public datasets demonstrate the effectiveness and superiority of our method over the state-of-the-art approaches.
 
-
-
 ### Requirements and Dependencies
-- Python = 3.6.8 in Anaconda3 = 4.7.5
-- CUDA = 9.2 & cuDNN = 7.0
-- PyTorch = 1.0
 
-
+- `requirements.txt`
 
 ### Installation
 Download the repository:
 
-    $ git clone https://github.com/HopLee6/RRIN.git
-
-
+    $ git clone https://github.com/ZurMaD/RRIN.git
 
 ### Pre-trained Model
 
 We provide the pre-trained model of "RRIN" at [OneDrive](https://1drv.ms/u/s!AsFdN0iAbWxBjIBWVVsdImS6md0jlA?e=1b14MH), which achieves the same results as reported in the paper. Download the pre-trained model to `/RRIN`.
-
-
 
 ### Testing Demo
 
 Test the model using frames in `/RRIN/data`:
 
 ```
-$ python demo.py
+$ python3 interpolate_frames.py --testpath '/content/RRIN/data/' --subfolder 'input' --multiplier 2
 ```
 
 and get the interpolated frame `/RRIN/data/im_interp.png`.
-
 
 
 ### Downloading Results
 Our RRIN model achieves the state-of-the-art performance on Vimeo90K, and comparable performance on UCF101. Download our interpolated results:
 
 - [Vimeo90K](https://1drv.ms/u/s!AsFdN0iAbWxBjIBYTVYPA5-3RPGQmg?e=LJ2Q1F)
-
 - [UCF101](https://1drv.ms/u/s!AsFdN0iAbWxBjIBXnNcOEEmElKqsww?e=4s9eeo)
 
-
-
-### Contact
+### Contact the author
 [Haopeng Li](mailto:hplee@mail.nwpu.edu.cn)
-
-
 
 ### License and Citation
 
 The use of this code is RESTRICTED to **non-commercial research and educational purposes**.
+
 
 ```
 @INPROCEEDINGS{RRIN, 
@@ -87,5 +73,4 @@ year={2020},
 pages={2613-2617}
 }
 ```
-
-
+* Zurmad edit is for EDUCATIONAL PURPOSES ONLY.
