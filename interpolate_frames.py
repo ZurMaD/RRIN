@@ -53,8 +53,8 @@ def main():
     # PARAMETERS
     print('---------- MAIN ----------', '\n',
           'Start Time:', datetime.now(), '\n',
-          'Frames Founded:', len(list_path(path)), '\n',
-          'Final frames:', len(list_path(path))*multiplier, '\n',
+          'Frames Founded:', len(list_path(path+sub_folder)), '\n',
+          'Final frames:', len(list_path(path+sub_folder))*multiplier, '\n',
           # 'Remain time estimated:',len(list_path(path))*multiplier*0.15,'\n
           '--------------------------')
 
