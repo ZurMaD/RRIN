@@ -48,6 +48,17 @@ $ git clone https://github.com/ZurMaD/RRIN.git
 
 We provide the pre-trained model of "RRIN" at [OneDrive](https://1drv.ms/u/s!AsFdN0iAbWxBjIBWVVsdImS6md0jlA?e=1b14MH), which achieves the same results as reported in the paper. Download the pre-trained model to `/RRIN`.
 
+OR do it with gdown
+
+```
+import gdown, subprocess
+
+url = 'https://drive.google.com/uc?id=1HeXmFYsF6ObXEHSU42lUaniNUqJKg0xf'
+# REPLACE PATH
+output = '/path_to_RRIN/RRIN/pretrained_model.pth.tar' 
+gdown.download(url, output, quiet=False)
+```
+
 ### Testing Demo
 
 Test the model using frames in `/RRIN/data`:
