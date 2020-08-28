@@ -53,7 +53,7 @@ We provide the pre-trained model of "RRIN" at [OneDrive](https://1drv.ms/u/s!AsF
 Test the model using frames in `/RRIN/data`:
 
 ```
-# Interpolate one frame 10/22*total_frames
+# Interpolate a number of frames will take 10/22*total_frames seconds
 $ python3 interpolate_frames.py --testpath '/content/RRIN/data/' --subfolder 'input' --multiplier 2
 ```
 
